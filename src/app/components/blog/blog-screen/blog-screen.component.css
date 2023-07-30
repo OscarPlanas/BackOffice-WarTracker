@@ -1,0 +1,95 @@
+/* Include the padding and border in an element's total width and height */
+* {
+    box-sizing: border-box;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: arial, sans-serif;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f44336;
+    color: white;
+}
+
+.delete-button {
+    background-color: #ff0000;
+    color: #1b1818;
+    border-radius: 20px;
+    border: none;
+    margin-top: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.update-button {
+    background-color: #51ff00;
+    color: #1b1818;
+    border-radius: 20px;
+    border: none;
+    margin-top: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+/* Optional: Add some styles for the header */
+.header {
+    background-color: #f44336;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+}
+
+.header h2 {
+    margin: 0;
+}
+
+/* Optional: Add hover effect for buttons */
+.delete-button:hover, .update-button:hover {
+    background-color: #bbb;
+}
+
+/* CSS for handling long content in the "Body Text" column */
+td.body-text {
+    max-width: 300px; /* Limit the maximum width of the column */
+    overflow: hidden; /* Hide the overflowing content */
+    white-space: nowrap; /* Prevent line wrapping */
+    text-overflow: ellipsis; /* Show ellipsis (...) when content overflows */
+    position: relative; /* Enable positioning of the "Read more" button */
+}
+
+/* Additional styles for adaptive content mode */
+td.adaptive {
+    max-width: none; /* Remove the maximum width to allow adaptive content */
+    white-space: normal; /* Allow line wrapping for adaptive content */
+}
+
+
+.full-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+    z-index: 1;
+  }
+  .toggle-button {
+    background-color: #444040;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}

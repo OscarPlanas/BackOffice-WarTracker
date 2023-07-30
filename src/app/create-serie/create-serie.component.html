@@ -1,0 +1,32 @@
+<!-- <div class="create-serie-container">
+    <form [formGroup]="createSerieForm" (ngSubmit)="onSubmit()" style="padding-bottom: 20px; width: 450px;" class="create-serie" [style]="clickCreateSerie ? 'margin-left: 0vw' : ''">
+        <span class="create-serie-header">Create Serie</span>
+            <label style=" margin-bottom: 20px;">Title:<input formControlName="title" [ngClass]="{ 'is-invalid': submitted && createSerieForm.controls.title.errors }" [style]="submitted && createSerieForm.controls.title.errors ? 'outline: 1px solid #b30000;' : ''" type="text" placeholder="Title" ></label>
+            <div *ngIf="submitted && createSerieForm.controls.title.errors" class="validation-error">               
+                <div *ngIf="createSerieForm.controls.title.errors.required">Is required</div>
+            </div>
+            <label style=" margin-bottom: 20px;">Description:<input formControlName="overview" [ngClass]="{ 'is-invalid': submitted && createSerieForm.controls.overview.errors }" [style]="submitted && createSerieForm.controls.overview.errors ? 'outline: 1px solid #b30000;' : ''" type="text" placeholder="Description" ></label>
+            <div *ngIf="submitted && createSerieForm.controls.overview.errors" class="validation-error">               
+                <div *ngIf="createSerieForm.controls.overview.errors.required">Is required</div>
+            </div>
+            <label style=" margin-bottom: 20px;">Poster:<input formControlName="poster_path"  type="file" placeholder="Photo" (change)='onFileInputChange($event)'></label>
+            <label style=" margin-bottom: 20px;">number of Seasons:<input formControlName="number_of_seasons" [ngClass]="{ 'is-invalid': submitted && createSerieForm.controls.number_of_seasons.errors }" [style]="submitted && createSerieForm.controls.number_of_seasons.errors ? 'outline: 1px solid #b30000;' : ''" type="number" placeholder="number of Seasons" ></label>
+            <div *ngIf="submitted && createSerieForm.controls.number_of_seasons.errors" class="validation-error">               
+                <div *ngIf="createSerieForm.controls.number_of_seasons.errors.required">Is required</div>
+            </div>
+            <label style=" margin-bottom: 20px;">number of episodes<input formControlName="number_of_episodes" [ngClass]="{ 'is-invalid': submitted && createSerieForm.controls.number_of_episodes.errors }" [style]="submitted && createSerieForm.controls.number_of_episodes.errors ? 'outline: 1px solid #b30000;' : ''" type="number" placeholder="number of episodes" ></label>
+            <div *ngIf="submitted && createSerieForm.controls.number_of_episodes.errors" class="validation-error">               
+                <div *ngIf="createSerieForm.controls.number_of_episodes.errors.required">Is required</div>
+            </div>
+            <label style=" margin-bottom: 20px;">status:<input formControlName="status" [ngClass]="{ 'is-invalid': submitted && createSerieForm.controls.status.errors }" [style]="submitted && createSerieForm.controls.status.errors ? 'outline: 1px solid #b30000;' : ''" type="text" placeholder="status" ></label>
+            <div *ngIf="submitted && createSerieForm.controls.status.errors" class="validation-error">               
+                <div *ngIf="createSerieForm.controls.status.errors.required">Is required</div>
+            </div>
+        <div style="width: 62%; display: inline-flex; justify-content: center; margin-bottom: 20px;">
+        <div style="margin-right: 4%; display: flex; flex-direction: column; width: 62%;">
+        </div>
+		</div>
+        <button class="create-serie-button" (click)="sendCreateSerie()"><b>Crear Serie</b></button>
+    </form>
+</div>
+ -->

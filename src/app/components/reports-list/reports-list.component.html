@@ -1,0 +1,27 @@
+<div id="UserListForm" class="header">
+    <h2>Reports list</h2>
+</div>
+
+<table class="table table-striped">
+    <tr>
+        <td>Owner</td>
+        <td>User Reported</td>
+        <td>Reason</td>
+        <td>Date</td>
+        <td>ID</td>
+
+    </tr>
+    <tr *ngFor="let Report of listReports">
+        <td style="color:rgb(255, 255, 255)">{{Report.owner}}</td>
+        <td style="color:rgb(255, 255, 255)">{{Report.user_reported}}</td>
+        <td style="color:rgb(255, 255, 255)">{{Report.reason}}</td>
+        <td style="color:rgb(255, 255, 255)">{{Report.date}}</td>
+        <td style="color:rgb(255, 255, 255)">{{Report._id}}</td>
+        <td>
+            <button class="delete-button" (click)="deleteReport(Report._id!)">
+                Delete
+            </button>
+        </td>
+    </tr>
+</table>
+

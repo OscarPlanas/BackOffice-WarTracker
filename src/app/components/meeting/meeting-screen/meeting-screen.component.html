@@ -1,0 +1,46 @@
+<div id="MeetingListForm" class="header">
+    <h2>Meetings list</h2>
+    <button class="toggle-button" (click)="toggleContentMode()">
+        Display the whole content
+    </button>
+</div>
+
+<table class="table table-striped">
+    <!-- Table headers -->
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Organizer's username</th>
+        <th>Date</th>
+        <th>Image Url</th>
+        <th>Location</th>
+        <th>Registration Fee</th>
+        <th>Participants' Usernames</th>
+        <th>Comments</th>
+    </tr>
+    <!-- Table rows -->
+    <tr *ngFor="let Meeting of listMeetings">
+        <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Meeting._id}}</td>
+        <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Meeting.title}}</td>
+        <td class="description" [ngClass]="{'adaptive': isAdaptiveMode}">
+            {{ isAdaptiveMode ? Meeting.description : (Meeting.description | slice:0:100) }}{{ isClipped(Meeting.description) ? '...' : '' }}
+        </td>
+        <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Meeting.organizer!.username}}</td>
+        <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Meeting.date}}</td>
+        <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Meeting.imageUrl}}</td>
+        <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Meeting.location}}</td>
+        <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Meeting.registration_fee}}</td>
+        <td [ngClass]="{'adaptive': isAdaptiveMode}">
+            <ul>
+                <li *ngFor="let participant of Meeting.participants">{{ participant.username }}</li>
+            </ul>
+        </td>
+        <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Meeting.comments}}</td>
+        <td>
+            <button class="delete-button" (click)="deleteUser(Meeting._id!)">Delete</button>
+            <button class="update-button" (click)="go2UpdateUser(Meeting._id!)">Update</button>
+        </td>
+    </tr>
+</table>
+

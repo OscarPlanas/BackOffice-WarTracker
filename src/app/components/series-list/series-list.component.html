@@ -1,0 +1,33 @@
+<div id="UserListForm" class="header">
+    <h2>Series list</h2>
+</div>
+
+<table class="table table-striped">
+    <tr>
+        <td>Title</td>
+        <td>Overview</td>
+        <td>Poster</td>
+        <td>Genres</td>
+        <td>Episodes</td>
+        <td>Status</td>
+        <td>ID</td>
+
+    </tr>
+    <tr *ngFor="let Serie of listSeries">
+        <td style="color:rgb(255, 255, 255)">{{Serie.title}}</td>
+        <td style="color:rgb(255, 255, 255)">{{Serie.overview}}</td>
+        <td style="color:rgb(255, 255, 255)">{{Serie.poster_path}}</td>
+        <td style="color:rgb(255, 255, 255)">{{Serie.genres}}</td>
+        <td style="color:rgb(255, 255, 255)">{{Serie.episodes?.length}}</td>
+        <td style="color:rgb(255, 255, 255)">{{Serie.status}}</td>
+        <td style="color:rgb(255, 255, 255)">{{Serie._id}}</td>
+        <td>
+            <button class="delete-button" (click)="deleteSerie(Serie._id!)">
+                Delete
+            </button>
+            <button class="update-button" (click)="go2UpdateSerie(Serie._id!)">
+                Update
+            </button>
+        </td>
+    </tr>
+</table>

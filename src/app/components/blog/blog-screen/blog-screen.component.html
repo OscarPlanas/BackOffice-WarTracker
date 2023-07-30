@@ -1,0 +1,40 @@
+<div id="BlogListForm" class="header">
+    <h2>Blogs list</h2>
+    <button class="toggle-button" (click)="toggleContentMode()">
+        Display the whole content
+    </button>
+</div>
+
+<table class="table table-striped">
+    <!-- Table headers -->
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Body Text</th>
+        <th>Author's username</th>
+        <th>Date</th>
+        <th>Image Url</th>
+        <th>Comments</th>
+        <th>Users Liked</th>
+        <th>Actions</th>
+    </tr>
+    <!-- Table rows -->
+    <tr *ngFor="let Blog of listBlogs">
+        <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Blog._id}}</td>
+        <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Blog.title}}</td>
+        <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Blog.description}}</td>
+        <td class="body-text" [ngClass]="{'adaptive': isAdaptiveMode}">
+            {{ isAdaptiveMode ? Blog.body_text : (Blog.body_text | slice:0:100) }}{{ isClipped(Blog.body_text) ? '...' : '' }}
+        </td>
+        <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Blog.author!.username}}</td>
+        <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Blog.date}}</td>
+        <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Blog.imageUrl}}</td>
+        <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Blog.comments}}</td>
+        <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Blog.usersLiked}}</td>
+        <td>
+            <button class="delete-button" (click)="deleteUser(Blog._id!)">Delete</button>
+            <button class="update-button" (click)="go2UpdateUser(Blog._id!)">Update</button>
+        </td>
+    </tr>
+</table>
