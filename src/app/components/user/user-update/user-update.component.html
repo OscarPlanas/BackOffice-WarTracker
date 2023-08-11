@@ -1,0 +1,47 @@
+<div class="login-container">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" style="padding-bottom: 20px; width: 450px;" class="register" [style]="clickRegister ? 'margin-left: 0vw' : ''">
+        <span class="login-header">Update</span>
+        
+        <label style="margin-bottom: 20px;">Name:
+            <input formControlName="name" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.name.errors }" [style]="submitted && registerForm.controls.name.errors ? 'outline: 1px solid #b30000;' : ''" type="text" [(ngModel)]="user.name">
+        </label>
+        <div *ngIf="submitted && registerForm.controls.name.errors" class="validation-error">
+        </div>
+        
+        <label style="margin-bottom: 20px;">Username:
+            <input formControlName="username" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.username.errors }" [style]="submitted && registerForm.controls.username.errors ? 'outline: 1px solid #b30000;' : ''" type="text" [(ngModel)]="user.username">
+        </label>
+        <div style="margin-top: 3px; margin-bottom: -16.6px; margin-left: 10px;" *ngIf="submitted && registerForm.controls.username.errors" class="validation-error">
+        </div>
+        
+        <label style="margin-bottom: 20px;">Date:
+            <input formControlName="date" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.date.errors }" [style]="submitted && registerForm.controls.date.errors ? 'outline: 1px solid #b30000;' : ''" type="text" [(ngModel)]="user.date">
+        </label>
+        <div style="margin-top: 3px; margin-bottom: -16.6px; margin-left: 10px;" *ngIf="submitted && registerForm.controls.date.errors" class="validation-error">
+        </div>
+        
+        <label style="margin-bottom: 20px;">Email:
+            <input formControlName="email" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.email.errors }" [style]="submitted && registerForm.controls.email.errors ? 'outline: 1px solid #b30000;' : ''" type="text" [(ngModel)]="user.email">
+        </label>
+        <div style="margin-top: 3px; margin-bottom: -16.6px; margin-left: 10px;" *ngIf="submitted && registerForm.controls.email.errors" class="validation-error">
+        </div>
+        <label style="margin-bottom: 20px;">Image Url:
+            <input formControlName="imageUrl" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.imageUrl.errors }" [style]="submitted && registerForm.controls.imageUrl.errors ? 'outline: 1px solid #b30000;' : ''" type="text" [(ngModel)]="user.imageUrl">
+        </label>
+        <div style="margin-top: 3px; margin-bottom: -16.6px; margin-left: 10px;" *ngIf="submitted && registerForm.controls.imageUrl.errors" class="validation-error">
+        </div>
+        <label style="margin-bottom: 20px;">Background ImageUrl:
+            <input formControlName="backgroundImageUrl" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.backgroundImageUrl.errors }" [style]="submitted && registerForm.controls.backgroundImageUrl.errors ? 'outline: 1px solid #b30000;' : ''" type="text" [(ngModel)]="user.backgroundImageUrl">
+        </label>
+        <div style="margin-top: 3px; margin-bottom: -16.6px; margin-left: 10px;" *ngIf="submitted && registerForm.controls.backgroundImageUrl.errors" class="validation-error">
+        </div>
+        <label style="margin-bottom: 20px;">About:
+            <input formControlName="about" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.about.errors }" [style]="submitted && registerForm.controls.about.errors ? 'outline: 1px solid #b30000;' : ''" type="text" [(ngModel)]="user.about">
+        </label>
+        <div style="margin-top: 3px; margin-bottom: -16.6px; margin-left: 10px;" *ngIf="submitted && registerForm.controls.about.errors" class="validation-error">
+        </div>
+        
+        
+        <button class="login-button" (click)="updateUser(user._id)"><b>Update</b></button>
+    </form>
+</div>

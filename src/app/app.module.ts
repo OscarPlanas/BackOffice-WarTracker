@@ -12,18 +12,20 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { ClickOutsideDirective } from './click-outside.directive';
-import { CreateEventComponent } from './components/create-event/create-event.component';
-import { EventScreenComponent } from './components/event-screen/event-screen.component';
-//import { UsersUpdateComponent } from './components/users-update/users-update.component';
-import { CreateSerieComponent } from './create-serie/create-serie.component';
-import { SeriesListComponent } from './components/series-list/series-list.component';
-import { ReportsListComponent } from './components/reports-list/reports-list.component';
-import { SeriesUpdateComponent } from './components/series-update/series-update.component';
-import { EventsUpdateComponent } from './components/events-update/events-update.component';
 import { BlogScreenComponent } from './components/blog/blog-screen/blog-screen.component';
 import { MeetingScreenComponent } from './components/meeting/meeting-screen/meeting-screen.component';
 import { UserScreenComponent } from './components/user/user-screen/user-screen.component';
 import { ReportScreenComponent } from './components/report/report-screen/report-screen.component';
+import { CommentScreenComponent } from './components/comment/comment-screen/comment-screen.component';
+import { UserSelectComponent } from './components/user/user-select/user-select.component';
+import { UserCreateComponent } from './components/user/user-create/user-create.component';
+import { BlogSelectComponent } from './components/blog/blog-select/blog-select.component';
+import { MeetingSelectComponent } from './components/meeting/meeting-select/meeting-select.component';
+import { MeetingCreateComponent } from './components/meeting/meeting-create/meeting-create.component';
+import { BlogCreateComponent } from './components/blog/blog-create/blog-create.component';
+import { BlogUpdateComponent } from './components/blog/blog-update/blog-update.component';
+import { MeetingUpdateComponent } from './components/meeting/meeting-update/meeting-update.component';
+import { UserUpdateComponent } from './components/user/user-update/user-update.component';
 
 @NgModule({
   declarations: [
@@ -31,18 +33,20 @@ import { ReportScreenComponent } from './components/report/report-screen/report-
     LoginComponent,
     ClickOutsideDirective,
     HomeComponent,
-    CreateEventComponent,
-    EventScreenComponent,
-    //UsersUpdateComponent,
-    CreateSerieComponent,
-    SeriesListComponent,
-    ReportsListComponent,
-    SeriesUpdateComponent,
-    EventsUpdateComponent,
     BlogScreenComponent,
     MeetingScreenComponent,
     UserScreenComponent,
     ReportScreenComponent,
+    CommentScreenComponent,
+    UserSelectComponent,
+    UserCreateComponent,
+    BlogSelectComponent,
+    MeetingSelectComponent,
+    MeetingCreateComponent,
+    BlogCreateComponent,
+    BlogUpdateComponent,
+    MeetingUpdateComponent,
+    UserUpdateComponent,
   ],
   imports: [
     BrowserModule,

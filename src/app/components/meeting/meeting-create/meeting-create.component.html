@@ -1,0 +1,76 @@
+<div class="create-user-container">
+    <form [formGroup]="createMeetingForm" (ngSubmit)="onSubmit()" style="padding-bottom: 20px; width: 450px;"
+        class="create-user" [style]="createMeetingForm ? 'margin-left: 0vw' : ''">
+        <span class="create-user-header">Create Meeting</span>
+        <label style="margin-bottom: 20px;">Title:<input formControlName="title"
+                [ngClass]="{ 'is-invalid': submitted && createMeetingForm.controls.title.errors }"
+                [style]="submitted && createMeetingForm.controls.title.errors ? 'outline: 1px solid #b30000;' : ''"
+                type="text" placeholder="Title"></label>
+        <div *ngIf="submitted && createMeetingForm.controls.title.errors" class="validation-error">
+            <div *ngIf="createMeetingForm.controls.title.errors.required">Is required</div>
+        </div>
+        <label style="margin-bottom: 20px;">ImageUrl:<input formControlName="imageUrl"
+                [ngClass]="{ 'is-invalid': submitted && createMeetingForm.controls.imageUrl.errors }"
+                [style]="submitted && createMeetingForm.controls.imageUrl.errors ? 'outline: 1px solid #b30000;' : ''"
+                type="text" placeholder="ImageUrl"></label>
+        <div *ngIf="submitted && createMeetingForm.controls.imageUrl.errors" class="validation-error">
+            <div *ngIf="createMeetingForm.controls.imageUrl.errors.required">Is required</div>
+        </div>
+        <label style="margin-bottom: 20px;">Description:<input formControlName="description"
+                [ngClass]="{ 'is-invalid': submitted && createMeetingForm.controls.description.errors }"
+                [style]="submitted && createMeetingForm.controls.description.errors ? 'outline: 1px solid #b30000;' : ''"
+                type="text" placeholder="Description"></label>
+        <div *ngIf="submitted && createMeetingForm.controls.description.errors" class="validation-error">
+            <div *ngIf="createMeetingForm.controls.description.errors.required">Is required</div>
+        </div>
+        <label style="margin-bottom: 20px;">Date:
+            <input formControlName="date"
+                [ngClass]="{ 'is-invalid': submitted && createMeetingForm.controls.date.errors }"
+                [style]="submitted && createMeetingForm.controls.date.errors ? 'outline: 1px solid #b30000;' : ''"
+                type="date" placeholder="Date" (change)="onDateInputChange($event)">
+        </label>
+        <div *ngIf="submitted && createMeetingForm.controls.date.errors" class="validation-error">
+            <div *ngIf="createMeetingForm.controls.date.errors.required">Is required</div>
+        </div>
+
+        <label style="margin-bottom: 20px;">Latitude:<input formControlName="lat"
+                [ngClass]="{ 'is-invalid': submitted && createMeetingForm.controls.lat.errors }"
+                [style]="submitted && createMeetingForm.controls.lat.errors ? 'outline: 1px solid #b30000;' : ''"
+                type="text" placeholder="Latitude"></label>
+        <div *ngIf="submitted && createMeetingForm.controls.lat.errors" class="validation-error">
+            <div *ngIf="createMeetingForm.controls.lat.errors.required">Is required</div>
+        </div>
+        <label style="margin-bottom: 20px;">Longitude:<input formControlName="lng"
+                [ngClass]="{ 'is-invalid': submitted && createMeetingForm.controls.lng.errors }"
+                [style]="submitted && createMeetingForm.controls.lng.errors ? 'outline: 1px solid #b30000;' : ''"
+                type="text" placeholder="Longitude"></label>
+        <div *ngIf="submitted && createMeetingForm.controls.lng.errors" class="validation-error">
+            <div *ngIf="createMeetingForm.controls.lng.errors.required">Is required</div>
+        </div>
+        <label style="margin-bottom: 20px;">Organizer:<input formControlName="organizer"
+                [ngClass]="{ 'is-invalid': submitted && createMeetingForm.controls.organizer.errors }"
+                [style]="submitted && createMeetingForm.controls.organizer.errors ? 'outline: 1px solid #b30000;' : ''"
+                type="text" placeholder="Organizer"></label>
+        <div *ngIf="submitted && createMeetingForm.controls.organizer.errors" class="validation-error">
+            <div *ngIf="createMeetingForm.controls.organizer.errors.required">Is required</div>
+        </div>
+        <label style="margin-bottom: 20px;">Location:<input formControlName="location"
+                [ngClass]="{ 'is-invalid': submitted && createMeetingForm.controls.location.errors }"
+                [style]="submitted && createMeetingForm.controls.location.errors ? 'outline: 1px solid #b30000;' : ''"
+                type="text" placeholder="Location"></label>
+        <div *ngIf="submitted && createMeetingForm.controls.location.errors" class="validation-error">
+            <div *ngIf="createMeetingForm.controls.location.errors.required">Is required</div>
+        </div>
+        <label style="margin-bottom: 20px;">Registration Fee:<input formControlName="registration_fee"
+                [ngClass]="{ 'is-invalid': submitted && createMeetingForm.controls.registration_fee.errors }"
+                [style]="submitted && createMeetingForm.controls.registration_fee.errors ? 'outline: 1px solid #b30000;' : ''"
+                type="text" placeholder="Registration fee"></label>
+        <div *ngIf="submitted && createMeetingForm.controls.registration_fee.errors" class="validation-error">
+            <div *ngIf="createMeetingForm.controls.registration_fee.errors.required">Is required</div>
+        </div>
+
+
+
+        <button class="create-user-button" (click)="sendCreateMeeting()"><b>Create Meeting</b></button>
+    </form>
+</div>

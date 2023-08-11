@@ -2,55 +2,51 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import axios from 'axios';
-import { User } from '../../../models/User';
+import { Comment } from '../../../models/Comment';
+
 
 
 @Component({
-  selector: 'app-user-screen',
-  templateUrl: './user-screen.component.html',
-  styleUrls: ['./user-screen.component.css']
+  selector: 'app-comment-screen',
+  templateUrl: './comment-screen.component.html',
+  styleUrls: ['./comment-screen.component.css']
 })
-export class UserScreenComponent implements OnInit {
-  UserListForm: FormGroup;
+export class CommentScreenComponent implements OnInit {
+  CommentsListForm: FormGroup;
   submitted = false;
   clickCreateEvent: boolean;
-  listUsers : User[] = [];
+  listComments : Comment[] = [];
 
   constructor(private formBuilder: FormBuilder, private _router: Router) { 
-    this.UserListForm = this.formBuilder.group({});
+    this.CommentsListForm = this.formBuilder.group({});
     this.clickCreateEvent = false;
   }
-
   rowData$!:any;
-
   ngOnInit(): void {
-    this.getUsers();
+    this.getComments();
   }
-  getUsers(){
+  getComments(){
 		//const response = axios.get(`http://api1.tvtracker.tk/api/users/`, {
-    const response = axios.get(`http://localhost:5432/api/users/`, {
+    const response = axios.get(`http://localhost:5432/api/comments/allcomments`, {
 
 		}).then((response) => {
-      this.listUsers = response.data;
+      this.listComments = response.data;
 		}).catch((error) => {
 			console.log(error);
 		});
 	}
-  deleteUser(id: String){
+  deleteComment(id: String){
     console.log(id);
-    if(!this.UserListForm.invalid){
+    if(!this.CommentsListForm.invalid){
       //const response = axios.delete(`http://api1.tvtracker.tk/api/users/${id}`)
-      const response = axios.delete(`http://localhost:5432/api/users/${id}`)
+      const response = axios.delete(`http://localhost:5432/api/comments/deletecomment/${id}`)
       .then((response) => {
-      this.getUsers();
+      this.getComments();
  
       }).catch((error) => {
         console.log(error);
       });
     }
-  }
-  go2UpdateUser(id: String){
-    this._router.navigate([`/user-update/${id}`])
   }
 
 }

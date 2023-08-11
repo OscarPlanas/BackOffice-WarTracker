@@ -11,6 +11,8 @@ export class Meeting {
     participants?: User[]; // Declare participants as an array of User
     comments?: any[]; // Assuming comments can be any type of data, you can use "any" here
     registration_fee?: number;
+    lat?: number;
+    lng?: number;
 
     constructor(
         id: string,
@@ -22,7 +24,9 @@ export class Meeting {
         location: string,
         participants: User[],
         comments: [],
-        registration_fee: number
+        registration_fee: number,
+        lat: number,
+        lng: number
     ) {
         this._id = id;
         this.title = title;
@@ -34,5 +38,7 @@ export class Meeting {
         this.participants = participants;
         this.comments = comments;
         this.registration_fee = registration_fee;
+        this.lat = lat;
+        this.lng = lng;
     }
 }

@@ -3,7 +3,7 @@
 	box-sizing: border-box;
   }
   
-.delete-button{
+  .delete-button{
 	background-color: #ff0000;
 	color: #1b1818;
 	border-radius: 20px;
@@ -25,6 +25,7 @@
 	padding: 8px 0;
 	cursor: pointer;
 }
+
 table {
 	border-collapse: collapse;
 	width: 100%;

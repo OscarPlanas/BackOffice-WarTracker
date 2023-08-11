@@ -3,12 +3,12 @@ import { User } from "./User";
 export class Comment {
     _id?: string;
     content?: string;
-    owner?: [];
+    owner?: User;
     likes?: [];
     dislikes?: [];
-    replies?: [];
+    replies?: Comment[];
 
-    constructor(id: string, content: string, owner: [], likes: [], dislikes: [], replies: []) {
+    constructor(id: string, content: string, owner: User, likes: [], dislikes: [], replies: Comment[]) {
         this._id = id;
         this.content = content;
         this.owner = owner;

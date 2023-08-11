@@ -15,6 +15,8 @@
         <th>Date</th>
         <th>Image Url</th>
         <th>Location</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
         <th>Registration Fee</th>
         <th>Participants' Usernames</th>
         <th>Comments</th>
@@ -30,6 +32,8 @@
         <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Meeting.date}}</td>
         <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Meeting.imageUrl}}</td>
         <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Meeting.location}}</td>
+        <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Meeting.lat}}</td>
+        <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Meeting.lng}}</td>
         <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Meeting.registration_fee}}</td>
         <td [ngClass]="{'adaptive': isAdaptiveMode}">
             <ul>
@@ -38,8 +42,8 @@
         </td>
         <td [ngClass]="{'adaptive': isAdaptiveMode}">{{Meeting.comments}}</td>
         <td>
-            <button class="delete-button" (click)="deleteUser(Meeting._id!)">Delete</button>
-            <button class="update-button" (click)="go2UpdateUser(Meeting._id!)">Update</button>
+            <button class="delete-button" (click)="deleteMeeting(Meeting._id!)">Delete</button>
+            <button class="update-button" (click)="go2UpdateMeeting(Meeting._id!)">Update</button>
         </td>
     </tr>
 </table>

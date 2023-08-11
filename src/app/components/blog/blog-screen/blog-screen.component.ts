@@ -37,7 +37,7 @@ export class BlogScreenComponent implements OnInit {
       console.log(error);
     });
   }
-  deleteUser(id: String) {
+  deleteBlog(id: String) {
     console.log(id);
     if (!this.BlogListForm.invalid) {
       //const response = axios.delete(`http://api1.tvtracker.tk/api/users/${id}`)
@@ -50,8 +50,8 @@ export class BlogScreenComponent implements OnInit {
         });
     }
   }
-  go2UpdateUser(id: String) {
-    this._router.navigate([`/blogs-update/${id}`])
+  go2UpdateBlog(id: String) {
+    this._router.navigate([`/blog-update/${id}`])
   }
 
 

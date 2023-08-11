@@ -35,7 +35,7 @@ export class MeetingScreenComponent implements OnInit {
       console.log(error);
     });
   }
-  deleteUser(id: String) {
+  deleteMeeting(id: String) {
     console.log(id);
     if (!this.MeetingListForm.invalid) {
       const response = axios.delete(`http://localhost:5432/api/meetings/${id}`)
@@ -47,8 +47,8 @@ export class MeetingScreenComponent implements OnInit {
         });
     }
   }
-  go2UpdateUser(id: String) {
-    this._router.navigate([`/blogs-update/${id}`])
+  go2UpdateMeeting(id: String) {
+    this._router.navigate([`/meeting-update/${id}`])
   }
 
 

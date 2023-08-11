@@ -1,0 +1,35 @@
+<div id="CommentsListForm" class="header">
+    <h2>Comments list</h2>
+</div>
+
+<table class="table table-striped">
+    <tr>
+        <td>ID</td>
+        <td>Content</td>
+        <td>Owner</td>
+        <td>Likes</td>
+        <td>Dislikes</td>
+        <td>Replies</td>
+    </tr>
+    <tr *ngFor="let Comment of listComments">
+        <td style="color:rgb(255, 255, 255)">{{Comment._id}}</td>
+        <td style="color:rgb(255, 255, 255)">{{Comment.content}}</td>
+        <td style="color:rgb(255, 255, 255)">{{Comment.owner!.username}}</td>
+        <td style="color:rgb(255, 255, 255)">{{Comment.likes}}</td>
+        <td style="color:rgb(255, 255, 255)">{{Comment.dislikes}}</td>
+        <td>
+            <!-- Display replies if there are any -->
+            <ul *ngIf="Comment.replies?.length">
+              <li *ngFor="let reply of Comment.replies">
+                <!-- Show owner ID and content of the reply -->
+                Owner ID: {{ reply.owner?._id }}, Content: {{ reply.content }}
+              </li>
+            </ul>
+        </td>
+        <button class="delete-button" (click)="deleteComment(Comment._id!)">
+            Delete
+        </button>
+        
+        
+    </tr>
+</table>

@@ -1,0 +1,47 @@
+<div class="create-user-container">
+    <form [formGroup]="createUserForm" (ngSubmit)="onSubmit()" style="padding-bottom: 20px; width: 450px;"
+        class="create-user" [style]="createUserForm ? 'margin-left: 0vw' : ''">
+        <span class="create-user-header">Create User</span>
+        <label style="margin-bottom: 20px;">Name:<input formControlName="name"
+                [ngClass]="{ 'is-invalid': submitted && createUserForm.controls.name.errors }"
+                [style]="submitted && createUserForm.controls.name.errors ? 'outline: 1px solid #b30000;' : ''"
+                type="text" placeholder="Name"></label>
+        <div *ngIf="submitted && createUserForm.controls.name.errors" class="validation-error">
+            <div *ngIf="createUserForm.controls.name.errors.required">Is required</div>
+        </div>
+        <label style="margin-bottom: 20px;">Username:<input formControlName="username"
+                [ngClass]="{ 'is-invalid': submitted && createUserForm.controls.username.errors }"
+                [style]="submitted && createUserForm.controls.username.errors ? 'outline: 1px solid #b30000;' : ''"
+                type="text" placeholder="Username"></label>
+        <div *ngIf="submitted && createUserForm.controls.username.errors" class="validation-error">
+            <div *ngIf="createUserForm.controls.username.errors.required">Is required</div>
+        </div>
+        <label style="margin-bottom: 20px;">Password:<input formControlName="password"
+                [ngClass]="{ 'is-invalid': submitted && createUserForm.controls.password.errors }"
+                [style]="submitted && createUserForm.controls.password.errors ? 'outline: 1px solid #b30000;' : ''"
+                type="password" placeholder="Password"></label>
+        <div *ngIf="submitted && createUserForm.controls.password.errors" class="validation-error">
+            <div *ngIf="createUserForm.controls.password.errors.required">Is required</div>
+        </div>
+        <label style="margin-bottom: 20px;">Date:
+            <input formControlName="date"
+                [ngClass]="{ 'is-invalid': submitted && createUserForm.controls.date.errors }"
+                [style]="submitted && createUserForm.controls.date.errors ? 'outline: 1px solid #b30000;' : ''"
+                type="date" placeholder="Date" (change)="onDateInputChange($event)">
+        </label>
+        <div *ngIf="submitted && createUserForm.controls.date.errors" class="validation-error">
+            <div *ngIf="createUserForm.controls.date.errors.required">Is required</div>
+        </div>
+
+        <label style="margin-bottom: 20px;">Email:<input formControlName="email"
+                [ngClass]="{ 'is-invalid': submitted && createUserForm.controls.email.errors }"
+                [style]="submitted && createUserForm.controls.email.errors ? 'outline: 1px solid #b30000;' : ''"
+                type="email" placeholder="Email"></label>
+        <div *ngIf="submitted && createUserForm.controls.email.errors" class="validation-error">
+            <div *ngIf="createUserForm.controls.email.errors.required">Is required</div>
+            <div *ngIf="createUserForm.controls.email.errors.email">Invalid email format</div>
+        </div>
+
+        <button class="create-user-button" (click)="sendCreateUser()"><b>Create User</b></button>
+    </form>
+</div>

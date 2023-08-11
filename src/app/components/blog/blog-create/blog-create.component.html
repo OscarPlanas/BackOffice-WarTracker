@@ -1,0 +1,52 @@
+<div class="create-user-container">
+    <form [formGroup]="createBlogForm" (ngSubmit)="onSubmit()" style="padding-bottom: 20px; width: 450px;"
+        class="create-user" [style]="createBlogForm ? 'margin-left: 0vw' : ''">
+        <span class="create-user-header">Create Blog</span>
+        <label style="margin-bottom: 20px;">Title:<input formControlName="title"
+                [ngClass]="{ 'is-invalid': submitted && createBlogForm.controls.title.errors }"
+                [style]="submitted && createBlogForm.controls.title.errors ? 'outline: 1px solid #b30000;' : ''"
+                type="text" placeholder="Title"></label>
+        <div *ngIf="submitted && createBlogForm.controls.title.errors" class="validation-error">
+            <div *ngIf="createBlogForm.controls.title.errors.required">Is required</div>
+        </div>
+        <label style="margin-bottom: 20px;">ImageUrl:<input formControlName="imageUrl"
+                [ngClass]="{ 'is-invalid': submitted && createBlogForm.controls.imageUrl.errors }"
+                [style]="submitted && createBlogForm.controls.imageUrl.errors ? 'outline: 1px solid #b30000;' : ''"
+                type="text" placeholder="ImageUrl"></label>
+        <div *ngIf="submitted && createBlogForm.controls.imageUrl.errors" class="validation-error">
+            <div *ngIf="createBlogForm.controls.imageUrl.errors.required">Is required</div>
+        </div>
+        <label style="margin-bottom: 20px;">Description:<input formControlName="description"
+                [ngClass]="{ 'is-invalid': submitted && createBlogForm.controls.description.errors }"
+                [style]="submitted && createBlogForm.controls.description.errors ? 'outline: 1px solid #b30000;' : ''"
+                type="text" placeholder="Description"></label>
+        <div *ngIf="submitted && createBlogForm.controls.description.errors" class="validation-error">
+            <div *ngIf="createBlogForm.controls.description.errors.required">Is required</div>
+        </div>
+        <label style="margin-bottom: 20px;">Date:
+            <input formControlName="date"
+                [ngClass]="{ 'is-invalid': submitted && createBlogForm.controls.date.errors }"
+                [style]="submitted && createBlogForm.controls.date.errors ? 'outline: 1px solid #b30000;' : ''"
+                type="date" placeholder="Date" (change)="onDateInputChange($event)">
+        </label>
+        <div *ngIf="submitted && createBlogForm.controls.date.errors" class="validation-error">
+            <div *ngIf="createBlogForm.controls.date.errors.required">Is required</div>
+        </div>
+
+        <label style="margin-bottom: 20px;">Body Text:<input formControlName="body_text"
+                [ngClass]="{ 'is-invalid': submitted && createBlogForm.controls.body_text.errors }"
+                [style]="submitted && createBlogForm.controls.body_text.errors ? 'outline: 1px solid #b30000;' : ''"
+                type="text" placeholder="Body text"></label>
+        <div *ngIf="submitted && createBlogForm.controls.body_text.errors" class="validation-error">
+            <div *ngIf="createBlogForm.controls.body_text.errors.required">Is required</div>
+        </div>
+        <label style="margin-bottom: 20px;">Author:<input formControlName="author"
+                [ngClass]="{ 'is-invalid': submitted && createBlogForm.controls.author.errors }"
+                [style]="submitted && createBlogForm.controls.author.errors ? 'outline: 1px solid #b30000;' : ''"
+                type="text" placeholder="Author"></label>
+        <div *ngIf="submitted && createBlogForm.controls.author.errors" class="validation-error">
+            <div *ngIf="createBlogForm.controls.author.errors.required">Is required</div>
+        </div>
+        <button class="create-user-button" (click)="sendCreateBlog()"><b>Create Blog</b></button>
+    </form>
+</div>

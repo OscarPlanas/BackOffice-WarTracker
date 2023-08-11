@@ -1,0 +1,31 @@
+<div class="login-container">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" style="padding-bottom: 20px; width: 450px;" class="register" [style]="clickRegister ? 'margin-left: 0vw' : ''">
+        <span class="login-header">Update</span>
+        
+        <label style="margin-bottom: 20px;">Title:
+            <input formControlName="title" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.title.errors }" [style]="submitted && registerForm.controls.title.errors ? 'outline: 1px solid #b30000;' : ''" type="text" [(ngModel)]="blog.title">
+        </label>
+        <div *ngIf="submitted && registerForm.controls.title.errors" class="validation-error">
+        </div>
+        
+        <label style="margin-bottom: 20px;">Description:
+            <input formControlName="description" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.description.errors }" [style]="submitted && registerForm.controls.description.errors ? 'outline: 1px solid #b30000;' : ''" type="text" [(ngModel)]="blog.description">
+        </label>
+        <div style="margin-top: 3px; margin-bottom: -16.6px; margin-left: 10px;" *ngIf="submitted && registerForm.controls.description.errors" class="validation-error">
+        </div>
+        
+        <label style="margin-bottom: 20px;">Body text:
+            <input formControlName="body_text" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.body_text.errors }" [style]="submitted && registerForm.controls.body_text.errors ? 'outline: 1px solid #b30000;' : ''" type="text" [(ngModel)]="blog.body_text">
+        </label>
+        <div style="margin-top: 3px; margin-bottom: -16.6px; margin-left: 10px;" *ngIf="submitted && registerForm.controls.body_text.errors" class="validation-error">
+        </div>
+        
+        <label style="margin-bottom: 20px;">Image URL:
+            <input formControlName="imageUrl" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.imageUrl.errors }" [style]="submitted && registerForm.controls.imageUrl.errors ? 'outline: 1px solid #b30000;' : ''" type="text" [(ngModel)]="blog.imageUrl">
+        </label>
+        <div style="margin-top: 3px; margin-bottom: -16.6px; margin-left: 10px;" *ngIf="submitted && registerForm.controls.imageUrl.errors" class="validation-error">
+        </div>
+        
+        <button class="login-button" (click)="updateBlog(blog._id)"><b>Update</b></button>
+    </form>
+</div>

@@ -10,14 +10,14 @@ const navOptions = [
     },
     {
         name: 'User',
-        path: '/user-screen',
+        path: '/user-select',
         icon: '../assets/User.png',
         exact: true,
         auth: true
     },
     {
         name: 'Blog',
-        path: '/blog-screen',
+        path: '/blog-select',
         icon: '../assets/blog.png',
         exact: true,
         auth: unAuth()
@@ -25,8 +25,15 @@ const navOptions = [
     },
     {
         name: 'Meeting',
-        path: '/meeting-screen',
+        path: '/meeting-select',
         icon: '../assets/meeting.png',
+        exact: true,
+        auth: unAuth()
+    },
+    {
+        name: 'Comment',
+        path: '/comment-screen',
+        icon: '../assets/comments.png',
         exact: true,
         auth: unAuth()
     },
@@ -44,48 +51,7 @@ const navOptions = [
         exact: true,
 		auth: unAuth()
     },
-    {
-        name: 'Create Event',
-        path: '/create-event',
-        icon: '../assets/EventArrow.png',
-        exact: true,
-        auth: unAuth()
-    },
-    {
-        name: 'Show Events',
-        path: '/event-screen',
-        icon: '../assets/EventArrow.png',
-        exact: true,
-        auth: unAuth()
-    },
-    {
-        name: 'User List',
-        path: '/userlist',
-        icon: '../assets/User.png',
-        exact: true,
-        auth: unAuth()
-    },
-    {
-        name: 'Create Serie',
-        path: '/create-serie',
-        icon: '../assets/EventArrow.png',
-        exact: true,
-        auth: true
-    },
-    {
-        name: 'Show Series',
-        path: '/series-list',
-        icon: '../assets/EventArrow.png',
-        exact: true,
-        auth: true
-    },
-    {
-        name: 'Show Reports',
-        path: '/reports-list',
-        icon: '../assets/EventArrow.png',
-        exact: true,
-        auth: true
-    },
+    
 
 ];
 
