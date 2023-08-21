@@ -63,8 +63,8 @@ export class MeetingScreenComponent implements OnInit {
     return element.scrollWidth > element.clientWidth;
   }
 
-  // Function to get the blog's body text by its id
-  getBlogTextById(meetingId: string): string {
+  // Function to get the meeting's body text by its id
+  getMeetingTextById(meetingId: string): string {
     const meeting = this.listMeetings.find((meeting) => meeting._id === meetingId);
     return meeting?.description || '';
   }

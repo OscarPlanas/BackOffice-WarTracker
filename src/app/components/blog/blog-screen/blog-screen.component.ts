@@ -27,12 +27,10 @@ export class BlogScreenComponent implements OnInit {
   }
 
   getBlogs() {
-    //const response = axios.get(`http://api1.tvtracker.tk/api/users/`, {
     const response = axios.get(`http://localhost:5432/api/blogs/`, {
 
     }).then((response) => {
       this.listBlogs = response.data;
-      //print(this.listBlogs.);
     }).catch((error) => {
       console.log(error);
     });
@@ -40,7 +38,6 @@ export class BlogScreenComponent implements OnInit {
   deleteBlog(id: String) {
     console.log(id);
     if (!this.BlogListForm.invalid) {
-      //const response = axios.delete(`http://api1.tvtracker.tk/api/users/${id}`)
       const response = axios.delete(`http://localhost:5432/api/blogs/${id}`)
         .then((response) => {
           this.getBlogs();

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import axios from 'axios';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment';
 import { Report } from '../../../models/Report';
 @Component({
   selector: 'app-report-screen',

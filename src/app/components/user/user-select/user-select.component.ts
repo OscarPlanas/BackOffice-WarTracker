@@ -13,12 +13,10 @@ export class UserSelectComponent implements OnInit {
   ngOnInit(): void {
   }
   navigateToUsersList() {
-    // Navigate to Page One
     this.router.navigate(['/user-screen']);
   }
 
   navigateToCreateUser() {
-    // Navigate to Page Two
     this.router.navigate(['/user-create']);
   }
 }

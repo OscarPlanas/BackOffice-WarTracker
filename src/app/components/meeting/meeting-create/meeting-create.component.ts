@@ -42,7 +42,7 @@ export class MeetingCreateComponent implements OnInit {
     const day = dateParts[2];
     const month = dateParts[1];
     const year = dateParts[0];
-    const formattedDate = `${year}-${month}-${day}`; // Correct format: yyyy-MM-dd
+    const formattedDate = `${year}-${month}-${day}`;
     this.createMeetingForm.patchValue({ date: formattedDate });
   }
   onSubmit() {

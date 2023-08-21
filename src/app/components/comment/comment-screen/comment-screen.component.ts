@@ -26,7 +26,6 @@ export class CommentScreenComponent implements OnInit {
     this.getComments();
   }
   getComments(){
-		//const response = axios.get(`http://api1.tvtracker.tk/api/users/`, {
     const response = axios.get(`http://localhost:5432/api/comments/allcomments`, {
 
 		}).then((response) => {
@@ -38,7 +37,6 @@ export class CommentScreenComponent implements OnInit {
   deleteComment(id: String){
     console.log(id);
     if(!this.CommentsListForm.invalid){
-      //const response = axios.delete(`http://api1.tvtracker.tk/api/users/${id}`)
       const response = axios.delete(`http://localhost:5432/api/comments/deletecomment/${id}`)
       .then((response) => {
       this.getComments();

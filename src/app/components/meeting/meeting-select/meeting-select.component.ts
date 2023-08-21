@@ -13,12 +13,10 @@ export class MeetingSelectComponent implements OnInit {
   ngOnInit(): void {
   }
   navigateToMeetingsList() {
-    // Navigate to Page One
     this.router.navigate(['/meeting-screen']);
   }
 
   navigateToCreateMeeting() {
-    // Navigate to Page Two
     this.router.navigate(['/meeting-create']);
   }
 
